@@ -1,0 +1,16 @@
+version: "3.6"
+
+services:
+  frontend_app:
+    build:
+      context: .
+      target: production
+    ports:
+      - "8002:3000"
+    networks:
+      - togl
+
+networks:
+  togl:
+    external:
+      name: togl
