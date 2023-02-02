@@ -9,6 +9,8 @@ services:
       - "8001:3000"
     networks:
       - togl
+    environment:
+      - NUXT_HOST: 0.0.0.0
 
 networks:
   togl:
