@@ -1,6 +1,10 @@
 stages:
   - deploy
 
+only:
+  refs:
+    - master
+
 deploy:
   stage: deploy
   before_script:
