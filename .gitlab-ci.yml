@@ -1,0 +1,9 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  before_script:
+    - docker info
+  script:
+    - docker-compose -f docker-compose.ci.yml up -d --build
