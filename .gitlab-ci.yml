@@ -2,6 +2,9 @@ stages:
   - deploy
 
 deploy:
+  only:
+    refs:
+      - master
   stage: deploy
   before_script:
     - docker info
