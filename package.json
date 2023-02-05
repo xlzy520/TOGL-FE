@@ -12,6 +12,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "bootstrap-vue": "^2.23.1",
+    "cookie-universal-nuxt": "^2.2.2",
     "core-js": "^3.25.3",
     "element-ui": "^2.15.10",
     "js-cookie": "^3.0.1",
