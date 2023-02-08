@@ -10,15 +10,8 @@
 import AppHeader from "./header.vue";
 import Footer from "./footer.vue";
 export default {
-  // middleware: 'auth', // 页面层级的中间件定义
   middleware({ store, route, redirect, params, query }) {
     console.log("middleware layouts inside");
-    // store状态树信息
-    // route 一条目标路由信息
-    //redirect 路由的强制跳转
-    // params query 校验参数的合理性
-    // console.log('layouts守卫前置守卫')
-    // redirect('/reg')
   },
   data() {
     return {
@@ -30,11 +23,11 @@ export default {
     $route: {
       immediate: true,
       handler(route) {
-        if (/login|reg/.test(route.path) || /register|reg/.test(route.path)) {
-          this.bNav = false;
-        } else {
-          this.bNav = true;
-        }
+        // if (/login|reg/.test(route.path) || /register|reg/.test(route.path)) {
+        //   this.bNav = false;
+        // } else {
+        //   this.bNav = true;
+        // }
       },
     },
   },

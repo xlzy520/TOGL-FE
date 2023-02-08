@@ -1,408 +1,414 @@
 <template>
-  <div style="width:100%;">
-    <div class="top">
-      <div class="top_width">
-        <div class="top_logo">
-          <a href="#"><img src="~assets/image/logo.png" /></a>
+  <div class="container">
+    <div class="register_width">
+      <div class="register_title"><b>Create Your Account</b></div>
+      <div class="register_txt">
+        *Fields are required if not otherwise stated.
+        <div class="register_txt_title title_24">
+          <b>Details of Organization :</b>
         </div>
-        <div class="top_right">
-          <div class="top_right_text">
-            <a href="#">FAQ</a>
-            <a href="#">Contact</a>
-            <a href="#">Site Map</a>
-            <div class="top_right_get">
-              <a href="#">Eng</a> | <a href="#">繁</a> | <a href="#">简</a>
+        <div class="register_txt_label title_24">Nature of Organization</div>
+        <div class="register_li">
+          <div class="register_radio_li">
+            <div class="payment_radio_li title_20">
+              <el-radio class="radio_class" v-model="delivery_radio" label="1"
+                >Incumbent Legislative Council (LegCo) Member/ District Council
+                (DC) Member</el-radio
+              >
             </div>
           </div>
-          <div class="top_right_size">
-            <button class="but_16">A</button>
-            <button class="but_24">A</button>
-            <button class="but_30">A</button>
+          <div class="register_radio_li">
+            <div class="payment_radio_li title_20">
+              <el-radio class="radio_class" v-model="delivery_radio" label="2"
+                >Charitable institution or trust of a public character which is
+                exempt from tax under section 88 of the Inland Revenue Ordinance
+                (Cap. 112) or society registered under Societies Ordinance (Cap.
+                151)</el-radio
+              >
+            </div>
           </div>
-          <div class="clear"></div>
-          <div class="top_right_but">
-            <nuxt-link to="/login">
-              <a><i class="fa fa-search"></i></a>
-            </nuxt-link>
-            <nuxt-link to="/login">
-              <a><i class="fa fa-home"></i></a>
-            </nuxt-link>
+          <div class="register_radio_li">
+            <div class="payment_radio_li title_20">
+              <el-radio class="radio_class" v-model="delivery_radio" label="3"
+                >Government department or statutory organisation</el-radio
+              >
+            </div>
+          </div>
+          <div class="register_radio_li">
+            <div class="payment_radio_li title_20">
+              <el-radio class="radio_class" v-model="delivery_radio" label="4"
+                >Other legally registered body</el-radio
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="register_bg"></div>
-      <div class="register_width">
-        <div class="register_title"><b>Create Your Account</b></div>
-        <div class="register_txt">
-          *Fields are required if not otherwise stated.
-          <div class="register_txt_title title_24">
-            <b>Details of Organization :</b>
-          </div>
-          <div class="register_txt_label title_24">Nature of Organization</div>
-          <div class="register_li">
-            <div class="register_radio_li">
-              <div class="payment_radio_li title_20">
-                <el-radio class="radio_class" v-model="delivery_radio" label="1"
-                  >Incumbent Legislative Council (LegCo) Member/ District
-                  Council (DC) Member</el-radio
-                >
-              </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">
+              Name of Organization/ Name of LegCo/ DC Member
             </div>
-            <div class="register_radio_li">
-              <div class="payment_radio_li title_20">
-                <el-radio class="radio_class" v-model="delivery_radio" label="2"
-                  >Charitable institution or trust of a public character which
-                  is exempt from tax under section 88 of the Inland Revenue
-                  Ordinance (Cap. 112) or society registered under Societies
-                  Ordinance (Cap. 151)</el-radio
-                >
+            <div class="register_li">
+              <div class="register_li_label">
+                Provide registered organization name. Identical name required.
               </div>
-            </div>
-            <div class="register_radio_li">
-              <div class="payment_radio_li title_20">
-                <el-radio class="radio_class" v-model="delivery_radio" label="3"
-                  >Government department or statutory organisation</el-radio
-                >
-              </div>
-            </div>
-            <div class="register_radio_li">
-              <div class="payment_radio_li title_20">
-                <el-radio class="radio_class" v-model="delivery_radio" label="4"
-                  >Other legally registered body</el-radio
-                >
+              <div class="register_li_input register_li_error">
+                <el-input v-model="a" class="form-input"></el-input>
+                <i @click="errorTips" class="el-icon-warning"></i>
               </div>
             </div>
           </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">
-                Name of Organization/ Name of LegCo/ DC Member
-              </div>
-              <div class="register_li">
-                <div class="register_li_label">
-                  Provide registered organization name. Identical name required.
-                </div>
-                <div class="register_li_input register_li_error">
-                  <el-input v-model="a" class="form-input"></el-input>
-                  <i class="iconfont icon-warning"></i>
-                </div>
-              </div>
+          <div class="register_50">
+            <div class="register_txt_label title_24">
+              Name of Sub-Organization(Optional)
             </div>
-            <div class="register_50">
-              <div class="register_txt_label title_24">
-                Name of Sub-Organization(Optional)
+            <div class="register_li">
+              <div class="register_li_label">
+                Please provide registered sub-organization name. Identical name
+                required.
               </div>
-              <div class="register_li">
-                <div class="register_li_label">
-                  Please provide registered sub-organization name. Identical
-                  name required.
-                </div>
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                  <i class="iconfont icon-warning"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">
-                Registration Number(Optional)
-              </div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">
-                Validity Period(Optional)
-              </div>
-              <div class="register_li">
-                <div class="layui-form register_li_input">
-                  <el-date-picker
-                    v-model="date1"
-                    type="date"
-                    class="form-input"
-                    placeholder=""
-                  >
-                  </el-date-picker>
-                  <i class="fa fa-calendar"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_txt_title padding_20 title_24">
-            <b>Contact information:</b>
-          </div>
-
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">Family Name</div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-            <div class="register_50">
-              <div class="register_txt_label title_24">Given Name</div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">
-                Position in the Applicant Organization
-              </div>
-              <div class="register_li">
-                <div class="register_li_input layui-form">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_100">
-              <div class="register_txt_label title_24">
-                Correspondence Address
-              </div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-                <div class="register_li_input padding_10">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">E-mail</div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">Tel.No.</div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">
-                Emergency Tel.No.(Optional)
-              </div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">Fax.No.(Optional)</div>
-              <div class="register_li">
-                <div class="register_li_input">
-                  <el-input v-model="a" class="form-input"></el-input>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-
-          <div class="register_txt_title padding_20 title_24">
-            <b>Supporting Documents</b>
-          </div>
-          <div class="register_li">
-            I/We attach the following documents in support of my/our application
-            (please see belows Note (1)):<br />
-            (a) documentary evidence to prove that the Applicant is a charitable
-            institution or trust of apublic character exempt from tax under
-            section 88 of the Inland Revenue Ordinance Cap.112 (if
-            applicable);<br />
-            (b) documentary evidence to prove that the Applicant is a society
-            registered under the Societies Ordinance Cap. 151 (if applicable);
-            or<br />
-            (C) documentary evidence to prove that the Applicant is a legally
-            registered body (please specify).
-            <div class="register_centent">
-              <div class="register_50 padding_10">
+              <div class="register_li_input">
                 <el-input v-model="a" class="form-input"></el-input>
               </div>
             </div>
-
-            <div class="register_Upload">
-              <button type="button" class="layui-btn">
-                Upload New Documents <i class="fa fa-upload"></i>
-              </button>
-              <div class="register_Upload_table">
-                <div class="register_Upload_table_li">
-                  Document A.pdf<i class="layui-icon layui-icon-close"></i>
-                </div>
-                <div class="register_Upload_table_li">
-                  Document B.pdf<i class="layui-icon layui-icon-close"></i>
-                </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">
+              Registration Number(Optional)
+            </div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
               </div>
             </div>
-            I/We acknowledge and agree that failure to submit the required
-            documents may lead to rejection of the application. I/We also
-            acknowledge and agree that I/we may need to submit other additional
-            information or documents as may be required by the Lands Department
-            to facilitate the assessment of my/our application. Unless such
-            additional information/documents are submitted, my/our application
-            cannot be further processed.
-            <br />NOTE:<br />
-            (1) No documentation proof is required if the application is made by
-            incumbent Lego Members/DC Members, Government departments or
-            statutory organisations.
-            <div class="clear"></div>
           </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">
+              Validity Period(Optional)
+            </div>
+            <div class="register_li">
+              <div class="layui-form register_li_input">
+                <el-date-picker
+                  v-model="date1"
+                  type="date"
+                  class="form-input"
+                  placeholder=""
+                >
+                </el-date-picker>
+                <i class="fa fa-calendar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_txt_title padding_20 title_24">
+          <b>Contact information:</b>
+        </div>
 
-          <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">Family Name</div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+          <div class="register_50">
+            <div class="register_txt_label title_24">Given Name</div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">
+              Position in the Applicant Organization
+            </div>
+            <div class="register_li">
+              <div class="register_li_input layui-form">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_100">
+            <div class="register_txt_label title_24">
+              Correspondence Address
+            </div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+              <div class="register_li_input padding_10">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">E-mail</div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">Tel.No.</div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">
+              Emergency Tel.No.(Optional)
+            </div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">Fax.No.(Optional)</div>
+            <div class="register_li">
+              <div class="register_li_input">
+                <el-input v-model="a" class="form-input"></el-input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="register_txt_title padding_20 title_24">
+          <b>Supporting Documents</b>
+        </div>
+        <div class="register_li">
+          I/We attach the following documents in support of my/our application
+          (please see belows Note (1)):<br />
+          (a) documentary evidence to prove that the Applicant is a charitable
+          institution or trust of apublic character exempt from tax under
+          section 88 of the Inland Revenue Ordinance Cap.112 (if applicable);<br />
+          (b) documentary evidence to prove that the Applicant is a society
+          registered under the Societies Ordinance Cap. 151 (if applicable);
+          or<br />
+          (C) documentary evidence to prove that the Applicant is a legally
+          registered body (please specify).
           <div class="register_centent">
-            <div class="register_50">
-              <div class="register_txt_label title_24">
-                Which service district you are for?
-              </div>
-              <div class="register_li">
-                <div class="register_li_input layui-form">
-                  <div id="district_select"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="register_centent">
-            <div class="register_100">
-              <div class="register_txt_label title_24">
-                Agreement for privacy policy
-              </div>
-              <div class="register_li">
-                <div class="register_radio_li">
-                  <div class="payment_radio_li title_20">
-                    <el-checkbox class="radio_class" v-model="Agreement">
-                      I understand and agree to the
-                      <a class="PrivacyPolicy_open">
-                        <b>User Agreement Privacy Policy</b>
-                      </a>
-                    </el-checkbox>
-                  </div>
-                </div>
-              </div>
+            <div class="register_50 padding_10">
+              <el-input v-model="a" class="form-input"></el-input>
             </div>
           </div>
 
-          <div class="register_botton padding_10">
-            <a href="index.html" class="register_botton_a">Back</a>
-            <a href="RegistrationConfirmPage.html" class="register_botton_but"
-              >Apply</a
+          <div class="register_Upload">
+            <el-upload
+              class="upload-demo"
+              ref="upload"
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="fileList"
+              :auto-upload="false"
             >
+              <el-button slot="trigger" size="small" type="primary"
+                >选取文件</el-button
+              >
+              <el-button
+                style="margin-left: 10px"
+                size="small"
+                type="success"
+                @click="submitUpload"
+                >上传到服务器</el-button
+              >
+              <div slot="tip" class="el-upload__tip">
+                只能上传jpg/png文件，且不超过500kb
+              </div>
+            </el-upload>
           </div>
+          I/We acknowledge and agree that failure to submit the required
+          documents may lead to rejection of the application. I/We also
+          acknowledge and agree that I/we may need to submit other additional
+          information or documents as may be required by the Lands Department to
+          facilitate the assessment of my/our application. Unless such
+          additional information/documents are submitted, my/our application
+          cannot be further processed.
+          <br />NOTE:<br />
+          (1) No documentation proof is required if the application is made by
+          incumbent Lego Members/DC Members, Government departments or statutory
+          organisations.
+          <div class="clear"></div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_50">
+            <div class="register_txt_label title_24">
+              Which service district you are for?
+            </div>
+            <div class="register_li">
+              <div class="register_li_input layui-form">
+                <div id="district_select"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="register_centent">
+          <div class="register_100">
+            <div class="register_txt_label title_24">
+              Agreement for privacy policy
+            </div>
+            <div class="register_li">
+              <div class="register_radio_li">
+                <div class="payment_radio_li title_20 PrivacyPolicy_item">
+                  <el-checkbox class="radio_class" v-model="Agreement">
+                    I understand and agree to the
+                  </el-checkbox>
+                  <a class="PrivacyPolicy_open" @click="privacyPolicy">
+                    <b>User Agreement Privacy Policy</b>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="register_botton padding_10">
+          <nuxt-link to="/login">
+            <a class="register_botton_a">Back</a>
+          </nuxt-link>
+          <nuxt-link to="/registrationConfirmPage">
+            <a class="register_botton_but">Apply</a>
+          </nuxt-link>
+          
         </div>
       </div>
     </div>
-    <div class="box_Tips_width register_error_box PrivacyPolicy_box">
-      <div class="box_Tips_ct">
-        <div class="box_Tips_table">
-          <div class="PrivacyPolicy_box_close">
-            <i class="layui-icon layui-icon-close"></i>
-          </div>
-          <div class="PrivacyPolicy_box_title">Applicant Declaration</div>
-          <div class="PrivacyPolicy_box_eer">
-            Please read and scroll down to the bottom to accept these terms.
-          </div>
-          <div class="PrivacyPolicy_box_txt">
-            <b>A. UNDERTAKING</b><br />
-            I/We hereby undertake that:-<br />
-            (1) All activities to be held and contents of messages to be
-            delivered or displayed during the event shall comply with the laws
-            of the Hong Kong Special Administrative Region;
-            <br />(2) In case that the Director of Highways, an Assistant
-            Commissioner for Transport, the Commissioner of Police or the
-            Director of Food and Environmental Hygiene inform me/us at any time
-            that any of the specified spots shall not be used for the event,
-            I/we shall immediately cease the event and reinstate the spot(s),
-            even when approval has been granted; <br />(3) I/We shall obtain any
-            other necessary licences, permits and approvals from other relevant
-            authorities as may be required for holding the non-profit making and
-            non-fund raising activities; and <br />(4) In case of ineligibility
-            to apply for or hold the non-profit making and non-fund raising
-            activities set out in this application as a consequence of changes
-            in my/our status or other aspects, I/we shall inform the Lands
-            Department forthwith and this application shall be deemed to have
-            been withdrawn. <br /><br /><b>B. INDEMNITY</b> <br />I/We shall
-            indemnify the Government of the HKSAR (“the Government”) and the
-            Director of Lands and his officers from and against all liabilities,
-            costs, expenses, claims, actions, demand and proceedings of
-            whatsoever nature arising out of or in connection with the
-            occupation of Government land or the setting up, use and holding of
-            or carrying out of any activities at the street counters at the
-            designated spots. <br /><br /><b>C. DECLARATION</b><br />
-            I/We hereby declare that:-<br />
-            (1) This is the only application for temporary occupation of
-            Government land that I/we have made for the above mentioned
-            occupation period in respect of the same designated spot(s) or
-            otherwise;
-            <br />(2) The particulars provided in this form are in all respects
-            true, complete and accurate; and <br />(3) I/We have read the Notes
-            below and the Guidelines on application for temporary occupation of
-            Government land for setting up street counters to hold non-profit
-            making activities. <br /><br /><b>D. CONSENT TO DISCLOSE</b><br />
-            By submitting this application, I/we hereby consent to the
-            Government’s disclosure of any or all of the information provided by
-            me/us on this application form, whether of its own motion or upon
-            request by any third party (written or otherwise) and without
-            further reference to me/us.
+    <el-dialog
+      :visible.sync="errorDialogVisible"
+      width="50%"
+      :before-close="handleClose"
+    >
+      <div class="box_Tips_width register_error_box">
+        <div class="box_Tips_ct">
+          <div class="box_Tips_table">
+            <div class="box_Tips_table_icon">
+              <img src="~assets/image/icon_error.svg" />
+            </div>
+            <div class="box_Tips_table_txt register_error_box_txt">
+              <b>Form contains error. Please correct fields marked in red. </b
+              ><br />
+              * Name of Contact Person is a required field<br />
+              * Tel. No. is a required field
+            </div>
+            <div class="box_Tips_table_but">
+              <button
+                @click="errorDialogVisible = false"
+                class="register_botton_but"
+              >
+                OK
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="foot">
-      <div class="container">
-        <div class="foot_left">
-          <img src="~assets/image/foot_logo.png" />
-          <span>
-            <a href="#">Important</a><b>|</b
-            ><a href="#">Privacy Policy Statement</a><br />
-            Lands Department © The Government of the HKSAR. <br />
-            All Rights Reserved.
-          </span>
+    </el-dialog>
+    <el-dialog
+      :visible.sync="policyDialogVisible"
+      width="50%"
+      class="Applicant"
+      :before-close="handleClose"
+    >
+      <div class="box_Tips_width register_error_box PrivacyPolicy_box">
+        <div class="box_Tips_ct">
+          <div class="box_Tips_table">
+            <div class="PrivacyPolicy_box_title">Applicant Declaration</div>
+            <div class="PrivacyPolicy_box_eer">
+              Please read and scroll down to the bottom to accept these terms.
+            </div>
+            <div class="PrivacyPolicy_box_txt">
+              <b>A. UNDERTAKING</b><br />
+              I/We hereby undertake that:-<br />
+              (1) All activities to be held and contents of messages to be
+              delivered or displayed during the event shall comply with the laws
+              of the Hong Kong Special Administrative Region;
+              <br />(2) In case that the Director of Highways, an Assistant
+              Commissioner for Transport, the Commissioner of Police or the
+              Director of Food and Environmental Hygiene inform me/us at any
+              time that any of the specified spots shall not be used for the
+              event, I/we shall immediately cease the event and reinstate the
+              spot(s), even when approval has been granted; <br />(3) I/We shall
+              obtain any other necessary licences, permits and approvals from
+              other relevant authorities as may be required for holding the
+              non-profit making and non-fund raising activities; and <br />(4)
+              In case of ineligibility to apply for or hold the non-profit
+              making and non-fund raising activities set out in this application
+              as a consequence of changes in my/our status or other aspects,
+              I/we shall inform the Lands Department forthwith and this
+              application shall be deemed to have been withdrawn. <br /><br /><b
+                >B. INDEMNITY</b
+              >
+              <br />I/We shall indemnify the Government of the HKSAR (“the
+              Government”) and the Director of Lands and his officers from and
+              against all liabilities, costs, expenses, claims, actions, demand
+              and proceedings of whatsoever nature arising out of or in
+              connection with the occupation of Government land or the setting
+              up, use and holding of or carrying out of any activities at the
+              street counters at the designated spots. <br /><br /><b
+                >C. DECLARATION</b
+              ><br />
+              I/We hereby declare that:-<br />
+              (1) This is the only application for temporary occupation of
+              Government land that I/we have made for the above mentioned
+              occupation period in respect of the same designated spot(s) or
+              otherwise;
+              <br />(2) The particulars provided in this form are in all
+              respects true, complete and accurate; and <br />(3) I/We have read
+              the Notes below and the Guidelines on application for temporary
+              occupation of Government land for setting up street counters to
+              hold non-profit making activities. <br /><br /><b
+                >D. CONSENT TO DISCLOSE</b
+              ><br />
+              By submitting this application, I/we hereby consent to the
+              Government’s disclosure of any or all of the information provided
+              by me/us on this application form, whether of its own motion or
+              upon request by any third party (written or otherwise) and without
+              further reference to me/us.
+            </div>
+          </div>
         </div>
-        <!-- <div class="foot_right">
-          <img src="~assets/imagew3c_icon.jpg" />
-        </div> -->
       </div>
-    </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogCancel('Cancel')">Cancel</el-button>
+        <el-button type="primary" @click="dialogCancel('Agree')">Agree</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -414,121 +420,55 @@ export default {
       a: "",
       date1: "",
       Agreement: false,
+      errorDialogVisible: false,
+      policyDialogVisible: false,
+      fileList: [
+        {
+          name: "food.jpeg",
+          url: "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100",
+        },
+        {
+          name: "food2.jpeg",
+          url: "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100",
+        },
+      ],
     };
+  },
+  methods: {
+    errorTips() {
+      this.errorDialogVisible = true;
+    },
+    handleClose() {
+      this.policyDialogVisible = false;
+    },
+    privacyPolicy() {
+      this.policyDialogVisible = true;
+    },
+    dialogCancel(type){
+      if(type === 'Cancel'){
+        this.$confirm('Are you sure want to cancel', 'hint', {
+          confirmButtonText: 'Yes',
+          cancelButtonText: 'No',
+          type: 'warning'
+        }).then(() => {
+          this.policyDialogVisible = false;
+        }).catch(() => {
+        });
+      }
+    },
+    submitUpload() {
+      this.$refs.upload.submit();
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview(file) {
+      console.log(file);
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
-.top {
-  position: relative;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  display: flow-root;
-  z-index: 9;
-  .top_width {
-    display: block;
-    padding: 10px 20px;
-    .top_logo {
-      float: left;
-      img {
-        height: 95px;
-      }
-    }
-    .top_right {
-      float: right;
-      .top_right_text {
-        float: left;
-        padding-top: 11px;
-        padding-right: 5px;
-        .top_right_get {
-          display: inline-block;
-          padding: 0px 3px;
-          a {
-            padding: 0px 1px;
-          }
-        }
-      }
-      a {
-        text-decoration: underline;
-        padding: 0px 5px;
-        color: #2079a9;
-        &:hover {
-          color: #ffb400;
-        }
-      }
-      .top_right_size {
-        display: inline-block;
-        padding-left: 3px;
-        padding-top: 1px;
-        overflow: hidden;
-        button {
-          background: none;
-          border: none;
-          line-height: 30px;
-          height: 30px;
-          border-bottom: #2079a9 solid 1px;
-          font-weight: 600;
-          float: left;
-          padding: 0px 5px;
-        }
-        .but_24 {
-          font-size: 24px;
-          line-height: 34px;
-          color: #2079a9;
-        }
-        .but_16 {
-          font-size: 16px;
-          line-height: 40px;
-          color: #2079a9;
-        }
-        .but_30 {
-          font-size: 30px;
-          color: #2079a9;
-        }
-      }
-      .top_right_but {
-        display: block;
-        text-align: right;
-        padding-top: 10px;
-        a {
-          padding: 0px;
-          overflow: hidden;
-          margin: 0px;
-          float: right;
-          display: inline-block;
-          &:hover i {
-            background: #2079a9;
-            color: #fff;
-          }
-        }
-        i {
-          font-size: 24px;
-          padding: 0px 15px;
-          display: inline-block;
-          height: 30px;
-          line-height: 30px;
-          border-radius: 40px;
-          background: #fff;
-          margin-left: 10px;
-        }
-        .fa-search {
-          font-size: 20px;
-        }
-      }
-    }
-  }
-}
-.register_bg {
-    background: url(~assets/image/hp_background.jpg) center center no-repeat;
-    background-size: cover;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
 .container {
   max-width: 1400px;
   width: 96%;
@@ -540,6 +480,35 @@ export default {
   }
   .title_20 {
     font-size: 1.125rem;
+  }
+  .Applicant{
+    &::v-deep .el-dialog{
+      height: 650px;
+    }
+    .PrivacyPolicy_box_txt{
+      max-height: 400px;
+    }
+    &::v-deep .el-dialog__footer{
+      text-align: center;
+      .el-button{
+        border-radius: 40px;
+        border: none;
+      }
+      .el-button--primary{
+        background: #2079a9;
+      }
+      .el-button--default{
+        background: #ecf6fb;
+      }
+    }
+  }
+  &::v-deep .el-dialog__headerbtn {
+    .el-dialog__close {
+      color: #fff;
+      padding: 5px;
+      border-radius: 50%;
+      background: #e4191c;
+    }
   }
   &::v-deep .el-checkbox {
     .el-checkbox__label {
@@ -554,30 +523,21 @@ export default {
   }
   .payment_radio_li {
     .radio_class {
+      font-size: 1rem;
       &::v-deep .el-radio__input {
         .el-radio__inner {
           background-color: #fff;
-          border: 2px solid #2079A9;
+          border: 2px solid #2079a9;
           width: 28px;
           height: 28px;
-          &::after{
+          &::after {
             width: 15px;
             height: 15px;
-            background-color: #2079A9;
+            background-color: #2079a9;
           }
         }
       }
     }
-  }
-  .register_bg {
-    background: url(assets/image/hp_background.jpg) center center no-repeat;
-    background-size: cover;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    display: block;
   }
   .register_width {
     position: relative;
@@ -652,7 +612,14 @@ export default {
       .register_centent {
         display: flex;
         margin: 0px -30px;
-        .register_100 {
+        .PrivacyPolicy_item {
+          display: flex;
+          a {
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 5px;
+          }
         }
         .register_50 {
           width: 50%;
@@ -705,181 +672,5 @@ export default {
       }
     }
   }
-}
-
-.register_li_label {
-  margin-bottom: 6px;
-}
-
-.register_li_input {
-  display: block;
-  position: relative;
-}
-
-.register_li_input i.fa {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  margin-top: -15px;
-  font-size: 30px;
-}
-.register_li_error i.fa {
-  color: #e4191c;
-}
-.register_input_50 {
-  width: 50%;
-}
-.register_100 {
-  width: 100%;
-  padding: 0px 30px;
-}
-.padding_10 {
-  padding-top: 15px;
-}
-.padding_20 {
-  padding-top: 40px;
-}
-
-.layui-form-select .layui-input {
-  border: 1px solid #3d9dd1;
-  border-radius: 10px;
-  background: #ecf6fb;
-  padding: 12px 15px;
-  height: auto;
-  font-size: 16px;
-  width: 100%;
-}
-.layui-form-select .layui-edge {
-  border-top-color: #3d9dd1;
-  border-width: 10px;
-  margin-top: -4px;
-}
-:root .layui-form-selected .layui-edge {
-  margin-top: -15px;
-}
-.layui-form-select dl dd.layui-this {
-  background: #2ca2b9;
-}
-
-.register_Upload {
-  padding: 10px 0px;
-}
-
-.layui-btn {
-  border-radius: 10px;
-  font-size: 18px;
-  padding: 5px 20px;
-  height: auto;
-  background-color: #2079a9;
-}
-.layui-btn i {
-  margin-left: 30px;
-}
-.register_Upload_table {
-  display: block;
-  padding-top: 10px;
-  overflow: hidden;
-  margin: -5px;
-}
-.register_Upload_table_li {
-  display: inline-block;
-  margin: 5px;
-  float: left;
-  position: relative;
-  border: 1px solid #3d9dd1;
-  border-radius: 10px;
-  background: #ecf6fb;
-  padding: 10px 15px;
-  padding-right: 60px;
-  font-size: 18px;
-}
-.register_Upload_table_li i {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  margin-top: -15px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #3d9dd1;
-}
-.register_Upload_table_li:nth-last-child(1) {
-  margin-right: 0px;
-}
-.register_Upload_table_li i.fa-download {
-  font-size: 22px;
-  font-weight: 100;
-  margin-top: -11px;
-}
-
-.register_botton {
-  display: block;
-  text-align: center;
-}
-.register_botton_a {
-  color: #2ca2b9;
-  background: #fff;
-  border: 2px solid #2ca2b9;
-  margin: 0px 5px;
-  border-radius: 36px;
-  font-size: 20px;
-  padding: 0px 30px;
-  display: inline-block;
-  height: 48px;
-  line-height: 44px;
-}
-.register_botton_a:hover {
-  color: #2ca2b9;
-  background: #ecf6fb;
-}
-.register_botton_a:focus {
-  border: 2px solid #2ca2b9;
-}
-.register_botton_but {
-  color: #2ca2b9;
-  background: #2ca2ba;
-  color: #fff !important;
-  cursor: pointer;
-  margin: 0px 5px;
-  border: 2px solid #2ca2ba;
-  border-radius: 36px;
-  font-weight: 600;
-  font-size: 20px;
-  padding: 0px 30px;
-  height: 48px;
-  display: inline-block;
-  line-height: 42px;
-}
-.register_botton_but:hover {
-  background: #1d8398;
-  border-color: #1d8398;
-}
-.register_botton_but:focus {
-  opacity: 0.5;
-  border: 2px solid #1d8398;
-}
-
-xm-select {
-  border: 1px solid #3d9dd1 !important;
-  border-radius: 10px !important;
-  background: #ecf6fb !important;
-  padding: 0px 5px !important;
-  height: 46px !important;
-  font-size: 16px !important;
-  width: 100% !important;
-}
-xm-select > .xm-label .xm-label-block {
-  margin-top: 6px !important;
-}
-xm-select > .xm-icon {
-  border-top-color: #3d9dd1 !important;
-  border-width: 10px !important;
-  margin-top: -4px !important;
-}
-xm-select > .xm-icon-expand {
-  margin-top: -15px !important;
-}
-xm-select > .xm-label.single-row {
-  right: 40px !important;
 }
 </style>

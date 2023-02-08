@@ -14,19 +14,20 @@ export default {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
     ],
   },
+
   css: [
     "element-ui/lib/theme-chalk/index.css",
     "assets/css/common.css",
     'assets/css/transition.css',
     'assets/css/iconfont.css'
   ],
-  styleResources: { // 需要添加这个 用来配置全局
+
+  styleResources: { 
     scss: [
       './assets/scss/global.scss'
     ]
   },
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "@/plugins/element-ui",
     {
@@ -35,13 +36,10 @@ export default {
     },
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
@@ -51,7 +49,6 @@ export default {
   ],
 
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // baseURL: process.env.API_URL,
     baseURL: "/",
     timeout: 15000,
@@ -61,7 +58,6 @@ export default {
     // proxy: true,
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
     postcss: null,

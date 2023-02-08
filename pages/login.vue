@@ -1,34 +1,5 @@
-<!-- Please remove this file from your project -->
 <template>
-  <div class="logo_index">
-    <div class="top">
-      <div class="top_width">
-        <div class="top_logo">
-          <a href="#"><img src="~assets/image/logo.png" /></a>
-        </div>
-        <div class="top_right">
-          <div class="top_right_text">
-            <a href="#">FAQ</a>
-            <a href="#">Contact</a>
-            <a href="#">Site Map</a>
-            <div class="top_right_get">
-              <a href="#">Eng</a> | <a href="#">繁</a> | <a href="#">简</a>
-            </div>
-          </div>
-          <div class="top_right_size">
-            <button class="but_16">A</button>
-            <button class="but_24">A</button>
-            <button class="but_30">A</button>
-          </div>
-          <div class="clear"></div>
-          <div class="top_right_but">
-            <a href="#"><i class="fa fa-search"></i></a>
-            <a href="#"><i class="fa fa-home"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="register_bg"></div>
+  <div class="container">
     <el-collapse-transition>
       <div class="login_new" v-if="newsShow">
         <div class="login_new_but">
@@ -96,9 +67,9 @@
                   Register Account
                 </el-button>
               </nuxt-link>
-              <a href="AccountSettings.html" class="register_botton_but"
-                >Login</a
-              >
+              <nuxt-link to="/accountSettings">
+                <a class="register_botton_but">Login</a>
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -133,20 +104,6 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="foot logo_foot">
-        <div class="container">
-          <div class="foot_left">
-            <img src="~assets/image/foot_logo.png" />
-            <span>
-              <b>Lands Department</b>
-              Lands Department © The Government of the HKSAR. <br />
-              All Rights Reserved.
-            </span>
-          </div>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -174,117 +131,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.logo_index {
-  .top {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    display: flow-root;
-    z-index: 9;
-    .top_width {
-      display: block;
-      padding: 10px 20px;
-      .top_logo {
-        float: left;
-        img {
-          height: 95px;
-        }
-      }
-      .top_right {
-        float: right;
-        .top_right_text {
-          float: left;
-          padding-top: 11px;
-          padding-right: 5px;
-          .top_right_get {
-            display: inline-block;
-            padding: 0px 3px;
-            a {
-              padding: 0px 1px;
-            }
-          }
-        }
-        a {
-          text-decoration: underline;
-          padding: 0px 5px;
-          color: #2079a9;
-          &:hover {
-            color: #ffb400;
-          }
-        }
-        .top_right_size {
-          display: inline-block;
-          padding-left: 3px;
-          padding-top: 1px;
-          overflow: hidden;
-          button {
-            background: none;
-            border: none;
-            line-height: 30px;
-            height: 30px;
-            border-bottom: #2079a9 solid 1px;
-            font-weight: 600;
-            float: left;
-            padding: 0px 5px;
-          }
-          .but_24 {
-            font-size: 24px;
-            line-height: 34px;
-            color: #2079a9;
-          }
-          .but_16 {
-            font-size: 16px;
-            line-height: 40px;
-            color: #2079a9;
-          }
-          .but_30 {
-            font-size: 30px;
-            color: #2079a9;
-          }
-        }
-        .top_right_but {
-          display: block;
-          text-align: right;
-          padding-top: 10px;
-          a {
-            padding: 0px;
-            overflow: hidden;
-            margin: 0px;
-            float: right;
-            display: inline-block;
-            &:hover i {
-              background: #2079a9;
-              color: #fff;
-            }
-          }
-          i {
-            font-size: 24px;
-            padding: 0px 15px;
-            display: inline-block;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 40px;
-            background: #fff;
-            margin-left: 10px;
-          }
-          .fa-search {
-            font-size: 20px;
-          }
-        }
-      }
-    }
-  }
-  .register_bg {
-    background: url(~assets/image/hp_background.jpg) center center no-repeat;
-    background-size: cover;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
+.container {
   .login_new {
     position: absolute;
     left: 0px;
@@ -407,7 +254,7 @@ export default {
                 padding: 10px 15px;
                 font-size: 16px;
                 width: 100%;
-                &::placeholder{
+                &::placeholder {
                   color: #2079a9;
                 }
               }
@@ -443,35 +290,6 @@ export default {
               display: inline-block;
               line-height: 42px;
             }
-          }
-        }
-      }
-    }
-  }
-  .logo_foot {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: none;
-    padding: 20px;
-    .container {
-      max-width: initial;
-      padding: 0px;
-      width: 100%;
-      .foot_left {
-        display: flex;
-        line-height: 1.4;
-        img {
-          height: 75px;
-        }
-        span {
-          line-height: 1.1;
-          padding-left: 10px;
-          b {
-            font-size: 24px;
-            display: block;
-            padding: 0px;
-            padding-bottom: 10px;
           }
         }
       }

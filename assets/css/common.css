@@ -357,3 +357,100 @@ color: #fff;
 .news_top{overflow: hidden;}
 .news_top_Search{width: 35%; float:left; position: relative;}
 .news_top_date{width: 35%; float:left; position: relative; margin: 0px 20px; margin-right: 0px;}
+.register_li_label {
+  margin-bottom: 6px;
+}
+
+.register_li_input {
+  display: block;
+  position: relative;
+}
+
+.register_li_input i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -15px;
+  font-size: 30px;
+}
+.register_li_error i {
+  color: #e4191c;
+  cursor: pointer;
+}
+.register_input_50 {
+  width: 50%;
+}
+.register_100 {
+  width: 100%;
+  padding: 0px 30px;
+}
+.padding_10 {
+  padding-top: 15px;
+}
+.padding_20 {
+  padding-top: 40px;
+}
+
+.layui-form-select .layui-input {
+  border: 1px solid #3d9dd1;
+  border-radius: 10px;
+  background: #ecf6fb;
+  padding: 12px 15px;
+  height: auto;
+  font-size: 16px;
+  width: 100%;
+}
+.layui-form-select .layui-edge {
+  border-top-color: #3d9dd1;
+  border-width: 10px;
+  margin-top: -4px;
+}
+:root .layui-form-selected .layui-edge {
+  margin-top: -15px;
+}
+.layui-form-select dl dd.layui-this {
+  background: #2ca2b9;
+}
+
+.register_Upload {
+  padding: 10px 0px;
+}
+
+.layui-btn {
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 5px 20px;
+  height: auto;
+  background-color: #2079a9;
+}
+.layui-btn i {
+  margin-left: 30px;
+}
+.register_Upload_table {
+  display: block;
+  padding-top: 10px;
+  overflow: hidden;
+  margin: -5px;
+}
+.box_Tips_width{display: table; width: 100%;}
+.box_Tips_ct{display: table-cell; vertical-align: middle; }
+.box_Tips_table{width: 96%; max-width: 750px; border-radius: 10px; background: #fff; margin: 0 auto; text-align: center;}
+.box_Tips_table_icon{ display: block;}
+.box_Tips_table_icon img{height: 100px;}
+.box_Tips_table_title{padding: 25px 0px; line-height: 1.2; color: #2079A9; font-size: 40px;  font-family:'ManropeBlack';}
+.box_Tips_table_txt{font-size: 18px;}
+.box_Tips_table_but{padding-top: 40px;}
+.ResetPassword_txt{font-size: 18px; line-height:1.8;}
+.box_Tips_ct{position: relative; z-index: 2;}
+.register_error_box_txt{padding-top:30px; color: #E4191C;}
+.register_error_box_txt b{font-size: 20px;}
+.reubmitpage_label{font-size: 20px;}
+.PrivacyPolicy_box{top:50px; bottom: 50px; padding: 0px;}
+.PrivacyPolicy_box .box_Tips_table{ max-width: 900px; height: 100%;}
+.PrivacyPolicy_box_title{font-size:24px; font-weight: bold; color: #2079A9;}
+.PrivacyPolicy_box_eer{display: block; color: #E4191C; padding-top: 10px;}
+.PrivacyPolicy_box_txt{text-align: left;padding: 0px 30px;  line-height: 1.5; display: block; overflow-y:scroll; margin-top:30px;}
+.PrivacyPolicy_box .box_Tips_ct{height: 100%; display: block;}
+.PrivacyPolicy_box_txt b{font-size: 18px;}
+.PrivacyPolicy_box_close{position:absolute; right: 30px; top: 30px;}
+.PrivacyPolicy_box_close i{width:30px; height:30px; font-size: 20PX; cursor: pointer; line-height: 30PX; text-align: center; border-radius: 100%; background: #E4191C; color: #fff; display: inline-block;}
