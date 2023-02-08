@@ -1,5 +1,4 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "frontend-app-v2",
     htmlAttrs: {
@@ -13,24 +12,23 @@ export default {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      {
-        rel: "stylesheet",
-        href: "//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
-      },
     ],
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "assets/css/common.scss",
+    "element-ui/lib/theme-chalk/index.css",
+    "assets/css/common.css",
     'assets/css/transition.css',
-    "element-ui/lib/theme-chalk/index.css", 
+    'assets/css/iconfont.css'
   ],
+  styleResources: { // 需要添加这个 用来配置全局
+    scss: [
+      './assets/scss/global.scss'
+    ]
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "@/plugins/element-ui",
-    "@/plugins/bootstrap-vue",
     {
       src: "~/plugins/axios",
       ssr: true,

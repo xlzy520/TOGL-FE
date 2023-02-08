@@ -91,9 +91,11 @@
               ></el-input>
             </div>
             <div class="login_table_but">
-              <a href="register.html" class="register_botton_a"
-                >Register Account</a
-              >
+              <nuxt-link to="/register">
+                <el-button class="register_botton_a">
+                  Register Account
+                </el-button>
+              </nuxt-link>
               <a href="AccountSettings.html" class="register_botton_but"
                 >Login</a
               >
@@ -171,7 +173,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .logo_index {
   .top {
     position: relative;
@@ -398,14 +400,14 @@ export default {
           .login_table_txt {
             padding-bottom: 20px;
             .form-input {
-              .el-input__inner {
+              &::v-deep .el-input__inner {
                 border: 1px solid #3d9dd1;
                 border-radius: 10px;
                 background: #ecf6fb;
                 padding: 10px 15px;
                 font-size: 16px;
                 width: 100%;
-                &::placeholder {
+                &::placeholder{
                   color: #2079a9;
                 }
               }
@@ -447,6 +449,9 @@ export default {
     }
   }
   .logo_foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     background: none;
     padding: 20px;
     .container {

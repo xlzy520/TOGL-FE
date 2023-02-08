@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width:100%;">
     <div class="top">
       <div class="top_width">
         <div class="top_logo">
@@ -21,8 +21,12 @@
           </div>
           <div class="clear"></div>
           <div class="top_right_but">
-            <a href="#"><i class="fa fa-search"></i></a>
-            <a href="index.html"><i class="fa fa-home"></i></a>
+            <nuxt-link to="/login">
+              <a><i class="fa fa-search"></i></a>
+            </nuxt-link>
+            <nuxt-link to="/login">
+              <a><i class="fa fa-home"></i></a>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -40,56 +44,34 @@
           <div class="register_li">
             <div class="register_radio_li">
               <div class="payment_radio_li title_20">
-                <input
-                  type="radio"
-                  class="radio_class"
-                  name="delivery_radio"
-                  id="delivery_1"
-                />
-                <label for="delivery_1">
-                  Incumbent Legislative Council (LegCo) Member/ District Council
-                  (DC) Member
-                </label>
+                <el-radio class="radio_class" v-model="delivery_radio" label="1"
+                  >Incumbent Legislative Council (LegCo) Member/ District
+                  Council (DC) Member</el-radio
+                >
               </div>
             </div>
             <div class="register_radio_li">
               <div class="payment_radio_li title_20">
-                <input
-                  type="radio"
-                  class="radio_class"
-                  name="delivery_radio"
-                  id="delivery_2"
-                />
-                <label for="delivery_2">
-                  Charitable institution or trust of a public character which is
-                  exempt from tax under section 88 of the Inland Revenue
+                <el-radio class="radio_class" v-model="delivery_radio" label="2"
+                  >Charitable institution or trust of a public character which
+                  is exempt from tax under section 88 of the Inland Revenue
                   Ordinance (Cap. 112) or society registered under Societies
-                  Ordinance (Cap. 151)
-                </label>
+                  Ordinance (Cap. 151)</el-radio
+                >
               </div>
             </div>
             <div class="register_radio_li">
               <div class="payment_radio_li title_20">
-                <input
-                  type="radio"
-                  class="radio_class"
-                  name="delivery_radio"
-                  id="delivery_3"
-                />
-                <label for="delivery_3">
-                  Government department or statutory organisation
-                </label>
+                <el-radio class="radio_class" v-model="delivery_radio" label="3"
+                  >Government department or statutory organisation</el-radio
+                >
               </div>
             </div>
             <div class="register_radio_li">
               <div class="payment_radio_li title_20">
-                <input
-                  type="radio"
-                  class="radio_class"
-                  name="delivery_radio"
-                  id="delivery_4"
-                />
-                <label for="delivery_4"> Other legally registered body </label>
+                <el-radio class="radio_class" v-model="delivery_radio" label="4"
+                  >Other legally registered body</el-radio
+                >
               </div>
             </div>
           </div>
@@ -104,8 +86,8 @@
                   Provide registered organization name. Identical name required.
                 </div>
                 <div class="register_li_input register_li_error">
-                  <input type="text" class="form-input" />
-                  <i class="fa fa-exclamation-circle"></i>
+                  <el-input v-model="a" class="form-input"></el-input>
+                  <i class="iconfont icon-warning"></i>
                 </div>
               </div>
             </div>
@@ -119,7 +101,8 @@
                   name required.
                 </div>
                 <div class="register_li_input">
-                  <input type="text" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
+                  <i class="iconfont icon-warning"></i>
                 </div>
               </div>
             </div>
@@ -132,7 +115,7 @@
               </div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="text" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -144,8 +127,14 @@
                 Validity Period(Optional)
               </div>
               <div class="register_li">
-                <div class="layui-form register_li_input register_input_50">
-                  <input type="text" class="form-input" id="test1-1" />
+                <div class="layui-form register_li_input">
+                  <el-date-picker
+                    v-model="date1"
+                    type="date"
+                    class="form-input"
+                    placeholder=""
+                  >
+                  </el-date-picker>
                   <i class="fa fa-calendar"></i>
                 </div>
               </div>
@@ -161,7 +150,7 @@
               <div class="register_txt_label title_24">Family Name</div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="text" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -169,7 +158,7 @@
               <div class="register_txt_label title_24">Given Name</div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="text" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -182,7 +171,7 @@
               </div>
               <div class="register_li">
                 <div class="register_li_input layui-form">
-                  <input type="text" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -195,10 +184,10 @@
               </div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="text" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
                 <div class="register_li_input padding_10">
-                  <input type="text" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -209,7 +198,7 @@
               <div class="register_txt_label title_24">E-mail</div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="email" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -220,7 +209,7 @@
               <div class="register_txt_label title_24">Tel.No.</div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="number" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -233,7 +222,7 @@
               </div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="number" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -244,7 +233,7 @@
               <div class="register_txt_label title_24">Fax.No.(Optional)</div>
               <div class="register_li">
                 <div class="register_li_input">
-                  <input type="number" class="form-input" />
+                  <el-input v-model="a" class="form-input"></el-input>
                 </div>
               </div>
             </div>
@@ -268,7 +257,7 @@
             registered body (please specify).
             <div class="register_centent">
               <div class="register_50 padding_10">
-                <input type="text" class="form-input" />
+                <el-input v-model="a" class="form-input"></el-input>
               </div>
             </div>
 
@@ -321,18 +310,12 @@
               <div class="register_li">
                 <div class="register_radio_li">
                   <div class="payment_radio_li title_20">
-                    <input
-                      type="radio"
-                      class="radio_class"
-                      name="Agreement"
-                      id="Agreement_1"
-                    />
-                    <label for="Agreement_1">
+                    <el-checkbox class="radio_class" v-model="Agreement">
                       I understand and agree to the
-                      <a class="PrivacyPolicy_open"
-                        ><b>User Agreement Privacy Policy</b></a
-                      >
-                    </label>
+                      <a class="PrivacyPolicy_open">
+                        <b>User Agreement Privacy Policy</b>
+                      </a>
+                    </el-checkbox>
                   </div>
                 </div>
               </div>
@@ -424,256 +407,315 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      delivery_radio: "",
+      a: "",
+      date1: "",
+      Agreement: false,
+    };
+  },
+};
 </script>
-<style lang="scss">
-.container {
-  max-width: 1400px;
-  width: 96%;
-  padding: 0px;
-  position: relative;
-}
-
-.register_bg {
-  background: url(assets/image/hp_background.jpg) center center no-repeat;
-  background-size: cover;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
+<style lang="scss" scoped>
 .top {
   position: relative;
   top: 0px;
   left: 0px;
   width: 100%;
   display: flow-root;
-  z-index: 9; /* overflow: hidden; */
+  z-index: 9;
+  .top_width {
+    display: block;
+    padding: 10px 20px;
+    .top_logo {
+      float: left;
+      img {
+        height: 95px;
+      }
+    }
+    .top_right {
+      float: right;
+      .top_right_text {
+        float: left;
+        padding-top: 11px;
+        padding-right: 5px;
+        .top_right_get {
+          display: inline-block;
+          padding: 0px 3px;
+          a {
+            padding: 0px 1px;
+          }
+        }
+      }
+      a {
+        text-decoration: underline;
+        padding: 0px 5px;
+        color: #2079a9;
+        &:hover {
+          color: #ffb400;
+        }
+      }
+      .top_right_size {
+        display: inline-block;
+        padding-left: 3px;
+        padding-top: 1px;
+        overflow: hidden;
+        button {
+          background: none;
+          border: none;
+          line-height: 30px;
+          height: 30px;
+          border-bottom: #2079a9 solid 1px;
+          font-weight: 600;
+          float: left;
+          padding: 0px 5px;
+        }
+        .but_24 {
+          font-size: 24px;
+          line-height: 34px;
+          color: #2079a9;
+        }
+        .but_16 {
+          font-size: 16px;
+          line-height: 40px;
+          color: #2079a9;
+        }
+        .but_30 {
+          font-size: 30px;
+          color: #2079a9;
+        }
+      }
+      .top_right_but {
+        display: block;
+        text-align: right;
+        padding-top: 10px;
+        a {
+          padding: 0px;
+          overflow: hidden;
+          margin: 0px;
+          float: right;
+          display: inline-block;
+          &:hover i {
+            background: #2079a9;
+            color: #fff;
+          }
+        }
+        i {
+          font-size: 24px;
+          padding: 0px 15px;
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 40px;
+          background: #fff;
+          margin-left: 10px;
+        }
+        .fa-search {
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
-.top_width {
-  display: block;
-  padding: 10px 20px;
-}
-.top_logo {
-  float: left;
-}
-.top_logo img {
-  height: 95px;
-}
-.top_right {
-  float: right;
-  color: #2079a9;
-}
-.top_right_text {
-  float: left;
-  padding-top: 11px;
-  padding-right: 5px;
-}
-.top_right a {
-  text-decoration: underline;
-  padding: 0px 5px;
-}
-.top_right_get {
-  display: inline-block;
-  padding: 0px 3px;
-}
-.top_right_get a {
-  padding: 0px 1px;
-}
-
-.top_right_size {
-  display: inline-block;
-  padding-left: 3px;
-  float: right;
-  overflow: hidden;
-}
-.top_right_size button {
-  background: none;
-  border: none;
-  line-height: 30px;
-  height: 30px;
-  border-bottom: #2079a9 solid 1px;
-  font-weight: 600;
-  float: left;
-  padding: 0px 5px;
-}
-.top_right_size .but_24 {
-  font-size: 24px;
-  line-height: 34px;
-}
-.top_right_size .but_16 {
-  font-size: 16px;
-  line-height: 40px;
-}
-.top_right_size .but_30 {
-  font-size: 30px;
-}
-
-.top_right_but {
-  display: block;
-  text-align: right;
-  padding-top: 10px;
-}
-.top_right_but a {
+.register_bg {
+    background: url(~assets/image/hp_background.jpg) center center no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+.container {
+  max-width: 1400px;
+  width: 96%;
   padding: 0px;
-  overflow: hidden;
-  margin: 0px;
-  float: right;
-  display: inline-block;
-}
-.top_right_but i {
-  font-size: 24px;
-  padding: 0px 15px;
-  display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 40px;
-  background: #fff;
-  margin-left: 10px;
-}
-.top_right_but .fa-search {
-  font-size: 20px;
-}
-.top_right_but a:hover i {
-  background: #2079a9;
-  color: #fff;
+  position: relative;
+  font-size: 1rem;
+  .title_24 {
+    font-size: 20px;
+  }
+  .title_20 {
+    font-size: 1.125rem;
+  }
+  &::v-deep .el-checkbox {
+    .el-checkbox__label {
+      color: #2079a9;
+    }
+  }
+  &::v-deep .el-radio {
+    .el-radio__label {
+      color: #2079a9;
+      font-size: 1rem;
+    }
+  }
+  .payment_radio_li {
+    .radio_class {
+      &::v-deep .el-radio__input {
+        .el-radio__inner {
+          background-color: #fff;
+          border: 2px solid #2079A9;
+          width: 28px;
+          height: 28px;
+          &::after{
+            width: 15px;
+            height: 15px;
+            background-color: #2079A9;
+          }
+        }
+      }
+    }
+  }
+  .register_bg {
+    background: url(assets/image/hp_background.jpg) center center no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .register_width {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    .register_title {
+      display: block;
+      font-size: 36px;
+      background: #2ca2b9;
+      color: #fff;
+      padding: 5px 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .register_txt {
+      padding: 40px 50px;
+      position: relative;
+      .register_txt_title {
+        color: #2079a9;
+        padding: 15px 0px;
+      }
+      .register_txt_label {
+        color: #2079a9;
+        padding-bottom: 15px;
+      }
+      .register_li {
+        padding: 0px 10px;
+        padding-bottom: 30px;
+        .payment_radio_li {
+          display: block;
+          padding-bottom: 15px;
+          &:nth-last-child(1) {
+            padding-bottom: 0px;
+          }
+          .radio_class {
+            font-size: 18px;
+            background-size: 26px auto;
+            line-height: 1.5;
+            position: relative;
+            min-height: 26px;
+            display: block;
+            padding: 0;
+            cursor: pointer;
+            margin: 0;
+            font-weight: normal;
+            text-align: left;
+            &::v-deep .el-checkbox__input {
+              .el-checkbox__inner {
+                background-color: #fff;
+                border-color: #409eff;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                border: 2px solid #409eff;
+                &::after {
+                  display: inline-block;
+                  width: 16px;
+                  height: 16px;
+                  border-radius: 50%;
+                  background-color: #2079a9;
+                  top: 4px;
+                  left: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .register_centent {
+        display: flex;
+        margin: 0px -30px;
+        .register_100 {
+        }
+        .register_50 {
+          width: 50%;
+          padding: 0px 30px;
+          float: left;
+          .register_li_error {
+            .form-input {
+              &::v-deep .el-input__inner {
+                border: 1px solid #ff5c5c;
+                background: #ecf6fb;
+              }
+            }
+          }
+          .form-input {
+            &::v-deep .el-input__inner {
+              border: 1px solid #3d9dd1;
+              border-radius: 10px;
+              background: #ecf6fb;
+              padding: 10px 15px;
+              font-size: 16px;
+              width: 100%;
+              &::placeholder {
+                color: #2079a9;
+              }
+            }
+            &::v-deep .el-input__prefix {
+              display: none;
+            }
+          }
+          &::v-deep .el-date-editor {
+            width: 100%;
+          }
+        }
+        .form-input {
+          &::v-deep .el-input__inner {
+            border: 1px solid #3d9dd1;
+            border-radius: 10px;
+            background: #ecf6fb;
+            padding: 10px 15px;
+            font-size: 16px;
+            width: 100%;
+            &::placeholder {
+              color: #2079a9;
+            }
+          }
+          &::v-deep .el-input__prefix {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
-.register_width {
-  position: relative;
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px 20px;
-  margin-bottom: 50px;
-  margin-top: 10px;
-}
-.register_title {
-  display: block;
-  font-size: 36px;
-  background: #2ca2b9;
-  color: #fff;
-  padding: 5px 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-.register_txt {
-  padding: 40px 50px;
-  position: relative;
-}
-.title_24 {
-  font-size: 20px;
-}
-.title_20 {
-  font-size: 18px;
-}
-.register_txt_title {
-  color: #2079a9;
-  padding: 15px 0px;
-}
-.register_txt_label {
-  color: #2079a9;
-  padding-bottom: 15px;
-}
-.register_txt_label a {
-  float: right;
-  font-size: 16px;
-  padding-top: 5px;
-  padding-right: 15px;
-  color: #3b5974;
-  text-decoration: underline;
-}
-
-.register_li {
-  padding: 0px 10px;
-  padding-bottom: 30px;
-}
-.payment_radio_li {
-  display: block;
-  padding-bottom: 15px;
-}
-.register_li .register_radio_li:nth-last-child(1) {
-  padding-bottom: 0px;
-}
-.radio_class {
-  display: none;
-}
-.radio_class + label {
-  background: url(assets/image/radio_icon.png) no-repeat top left;
-  background-size: 26px auto;
-  line-height: 1.5;
-  position: relative;
-  min-height: 26px;
-  display: block;
-  padding: 0;
-  cursor: pointer;
-  padding-left: 35px;
-  margin: 0;
-  font-weight: normal;
-  text-align: left;
-}
-.radio_class:checked + label {
-  background: url(assets/image/radio_y_icon.png) no-repeat top left;
-  background-size: 26px auto;
-}
-.radio_class + label a {
-  text-decoration: underline;
-}
-
-.checkbox_class {
-  display: none;
-}
-.checkbox_class + label {
-  background: url(assets/image/checkbox_icon.png) no-repeat top left;
-  background-size: 26px auto;
-  line-height: 1.5;
-  position: relative;
-  min-height: 26px;
-  display: block;
-  padding: 0;
-  cursor: pointer;
-  padding-left: 35px;
-  margin: 0;
-  font-weight: normal;
-  text-align: left;
-}
-.checkbox_class:checked + label {
-  background: url(assets/image/checkbox_y_icon.png) no-repeat top left;
-  background-size: 26px auto;
-}
-.checkbox_class + label a {
-  text-decoration: underline;
-}
-
-.register_centent {
-  display: flex;
-  margin: 0px -30px;
-}
-.register_50 {
-  width: 50%;
-  padding: 0px 30px;
-  float: left;
-}
 .register_li_label {
   margin-bottom: 6px;
 }
-.form-input {
-  border: 1px solid #3d9dd1;
-  border-radius: 10px;
-  background: #ecf6fb;
-  padding: 10px 15px;
-  font-size: 16px;
-  width: 100%;
-}
+
 .register_li_input {
   display: block;
   position: relative;
 }
-.register_li_error .form-input {
-  border: 1px solid #ff5c5c;
-  background: #ffe2e2;
-}
+
 .register_li_input i.fa {
   position: absolute;
   right: 10px;
