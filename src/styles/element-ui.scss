@@ -1,0 +1,46 @@
+// cover some element-ui styles
+
+:root {
+	--el-color-primary: #628aff;
+	--el-color-primary-light-3: #81a1ff;
+	--el-color-primary-light-5: #b3c6ff;
+	--el-color-primary-light-7: #d0dcff;
+	--el-color-primary-light-9: #eff3ff;
+
+	--el-menu-base-level-padding: 10px;
+}
+
+.el-table {
+	--el-table-header-text-color: #333;
+}
+
+.el-input-number.w-full {
+	width: 100%;
+	.el-input__inner {
+		text-align: left;
+	}
+}
+
+.publish-page {
+	.el-select {
+		width: 100%;
+	}
+}
+
+.el-pagination {
+	justify-content: end;
+	.el-pagination__rightwrapper {
+		flex: 0;
+	}
+}
+
+.el-drawer__header {
+	span {
+		font-size: 18px;
+		font-weight: 500;
+	}
+}
+
+.el-descriptions__label.el-descriptions__cell.is-bordered-label {
+	font-weight: 500;
+}
