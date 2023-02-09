@@ -2,7 +2,7 @@ import path, { resolve } from 'path';
 import type { ConfigEnv, UserConfigExport } from 'vite';
 import { loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import viteSvgIcons from 'vite-plugin-svg-icons';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import VueJSX from '@vitejs/plugin-vue-jsx';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
@@ -85,7 +85,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
 		},
 		plugins: [
 			vue(),
-			viteSvgIcons({
+			createSvgIconsPlugin({
 				// 指定需要缓存的图标文件夹
 				iconDirs: [path.resolve(process.cwd(), 'src/icons')],
 				// 指定symbolId格式
